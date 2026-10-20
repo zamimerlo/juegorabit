@@ -1,0 +1,122 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proceso de Desarrollo - Runner Rabbits</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body style="background-color: #fce9ec;">
+    <nav class="navbar navbar-expand-lg" style="background-color: #ffc0cb !important;">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="#">🐰 Runner Rabbits</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="/inicio/">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/guia/">Cómo Jugar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active fw-bold" aria-current="page" href="/desarrollo/">Proceso de desarrollo</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="text-center mb-5">
+            <h1 class="fw-bold text-dark"> Proceso de Desarrollo e Informe Técnico</h1>
+            <p class="text-muted">Conoce el detrás de escena, las decisiones de diseño, los retos superados y el aprendizaje en la creación de <strong>Runner Rabbits</strong>.</p>
+        </div>
+
+      
+        <div class="card shadow-sm border-0 mb-4" style="background-color: #fff0f3;">
+            <div class="card-body p-4">
+                <h3 class="card-title fw-bold text-dark mb-3">1. Introducción y Conceptualización del Proyecto</h3>
+                <p class="card-text">
+                    <strong>Runner Rabbits</strong> surgió como un proyecto de desarrollo de un videojuego en 3D. La idea principal del personaje la tome porque amo a los conejos y decidi convertilo en el protagonista de la historia. 
+                </p>
+                <p class="card-text">
+                    Tomando como principal referencia mecánica a títulos exitosos del género <em>runner</em> como <em>Subway Surfers</em>, se planteó un recorrido continuo donde el personaje avanza esquivando obstáculos y recolectando zanahorias. A diferencia de otros esquemas por niveles, se optó por un bucle de juego infinito enfocado en la superación constante de récords personales.
+                </p>
+            </div>
+        </div>
+
+        
+        <div class="card shadow-sm border-0 mb-4" style="background-color: #fff0f3;">
+            <div class="card-body p-4">
+                <h3 class="card-title fw-bold text-dark mb-3">2. Diseño del Entorno y Modelado Tridimensional</h3>
+                <p class="card-text">
+                    Para generar un aspecto de pradera en diseño 3d, descargue archivos de forma gratuita desde internet en paginas como "kenney.nl", los agrege a la carpeta del proyecto para poder utilizarlos. De esos elementos elegí:
+                </p>
+                <ul>
+                    <li><strong>Obstáculos naturales:</strong> Troncos, árboles y rocas distribuidos estratégicamente a lo largo de los carriles para obligar al jugador a reaccionar mediante saltos o desplazamientos laterales.</li>
+                    <li><strong>Recolección:</strong> Zanahorias ubicadas en los espacios libres entre obstáculos, premiando la agilidad visual y los reflejos.</li>
+                    <li><strong>Gestión de Modelos 3D:</strong> Al no contar con experiencia previa en modelado tridimensional, se optó por integrar recursos externos compatibles (archivos en formato ".glb") permitiendo estructurar el entorno visual sin poner demaciado esfuerzo en a creacion de eementos para un espacio armonioso.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card shadow-sm border-0 mb-4" style="background-color: #fff0f3;">
+            <div class="card-body p-4">
+                <h3 class="card-title fw-bold text-dark mb-3">3. Motor Gráfico y Lógica de Programación</h3>
+                <p class="card-text">
+                    El videojuego fue desarrollado utilizando <strong>Godot 3.4</strong>, un motor que me permitió gestionar entornos 3D, escenas, colisiones y scripts de forma fácil, teniendo en cuenta que al principio no conocia como se utilizaba. 
+                </p>
+                <p class="card-text">
+                    <strong>Mecánicas principales programadas:</strong>
+                </p>
+                <ul>
+                    <li><strong>Efecto de avance:</strong> El conejo se mantiene en una posición prácticamente fija mientras el escenario se desplaza hacia él, creando una ilusión óptica de movimiento continuo.</li>
+                    <li><strong>Sistema de carriles:</strong> El movimiento lateral se restringió de forma estricta a tres carriles fijos mediante scripts en lenguaje ".gd".</li>
+                    <li><strong>Mecánica de Salto:</strong> Lo incorpore a mitad del desarrollo despues de comprender el comportamiento de la gravedad y el desplazamiento vertical, vinculado a la barra espaciadora.</li>
+                    <li><strong>Sistema de Datos Locales:</strong> implemente un sistema de guardado de récords y tiempos mediante archivos de configuración locales y la funcionalidad <strong>autoload</strong> de Godot para guardar la información de las partidas aunque el juego se cierre.</li>
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="card shadow-sm border-0 mb-4" style="background-color: #fff0f3;">
+            <div class="card-body p-4">
+                <h3 class="card-title fw-bold text-dark mb-3">4. Obstáculos Encontrados y Soluciones Aplicadas</h3>
+                <p class="card-text">
+                   Al ser un proyecto dificil y sin conocimientos previos en el motor de videojuegos "Godot", comenzar a crear el juego fue complicado y tive que resolver ciertos problemas.
+                </p>
+                <ul>
+                    <li><strong>Desconocer nodos y herramientas:</strong> No conocia el funcionamiento de ningún nodo o escena del motor para poder conocer y aprender a utilizarlo investigue, mire videos en Youtube y me ayude con una IA para las dudas que tenia. </li>
+                    <li><strong>Problemas con las señales de los botones:</strong> En las primeras fases del menú principal, los botones no respondían correctamente debido al desconocimiento del sistema de señales de Godot. Se solucionó probando diferentes configuraciones hasta dominar el sistema de comunicación de eventos.</li>
+                    <li><strong>Colisiones y Game Over:</strong> Configuración de CollisionShape3D para detectar de manera precisa el impacto contra troncos y rocas, activando de inmediato la pantalla de fin de partida.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card shadow-sm border-0 mb-4" style="background-color: #fff0f3;">
+            <div class="card-body p-4">
+                <h3 class="card-title fw-bold text-dark mb-3">5. Estado Actual, Pruebas y Conclusión</h3>
+                <p class="card-text">
+                    Actualmente, <strong>Runner Rabbits</strong> se encuentra en un estado plenamente funcional. Cuenta con menú principal, opciones de sonido, pantalla de carga, contadores dinámicos de tiempo y zanahorias, y la pantalla de Game Over. 
+                </p>
+                <p class="card-text">
+                    <strong>Reflexión final:</strong> A pesar de las dificultades técnicas iniciales y de trabajar con recursos y documentación técnica compleja, el desarrollo se convirtió en un pasatiempo sumamente entreteniido y divertido, y siento que podria seguir generando futuros proyectos personales en el diseño de videojuegos.
+                </p>
+            </div>
+        </div>
+    </div>
+
+ 
+    <footer style="background-color: #ffc0cb;" class="text-center py-3 mt-5">
+        <p><strong>Correo electrónico:</strong> zamiraestigarribiamerlo@gmail.com</p>
+        <p><strong>Número telefónico:</strong> 3476815912</p>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

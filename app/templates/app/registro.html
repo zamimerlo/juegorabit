@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+</head>
+<body>
+    <h1>Registro de usuarios</h1>
+    <p style="color: red;">{{ mensaje }}</p>
+    <form method="POST">
+        {% csrf_token %}
+        <label>Nombre:</label><br>
+        <input type="text" name="nombre" required><br><br>
+        <label>Apellido:</label><br>
+        <input type="text" name="apellido" required><br><br>
+        <label>Usuario:</label><br>
+        <input type="text" name="usuario" required><br><br>
+        <label>Email:</label><br>
+        <input type="email" name="gmail" required><br><br>
+        <label>Contraseña:</label><br>
+        <input type="password" name="contrasenia" required><br><br>
+        <input type="submit" value="Registrarse">
+        <p class="text-center mb-4">
+            ¿Ya tenes una cuenta?
+            <a href="{% url 'login' %}">
+                inicio de sesión
+            </a>
+        </p>
+    </form>
+</body>
+</html>

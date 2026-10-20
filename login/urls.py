@@ -1,0 +1,13 @@
+from django.contrib import admin
+from django.urls import path
+from app import views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', views.inicio, name='home'),
+    path('inicio/',views.inicio, name= 'inicio'),
+    path('login/', views.iniciar_usuario, name='login'),
+    path('registro/', views.registro, name='registro'),
+    path('guia/', views.guia, name='guia'),
+    path('desarrollo/', views.desarrollo, name='desarrollo'),
+]
